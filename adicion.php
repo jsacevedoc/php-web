@@ -7,7 +7,7 @@
   if (!empty($_POST['nombre'])) {
     $sql = "INSERT INTO usuarios (nombre) VALUES (:nombre)";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':nombre', $_POST['nombre']);
+    $stmt->bindParam(':nombre', $_POST['nombre']);  #parámetros de enlace
 
     if ($stmt->execute()) {
       $message = 'Nuevo usuario creado';
